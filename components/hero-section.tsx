@@ -49,13 +49,13 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="bg-[#424f35]/10 dark:bg-slate-900/10 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/20 dark:border-slate-700/20"
+          className="bg-white/60 dark:bg-slate-900/90 backdrop-blur-lg rounded-3xl p-8 md:p-12 border border-white/30 dark:border-slate-700/30 shadow-2xl"
         >
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-black/70 dark:text-white mb-4"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white mb-4 drop-shadow-sm"
           >
             Natasha Nomzamo Khanye
           </motion.h1>
@@ -66,12 +66,12 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col md:flex-row items-center justify-center gap-4 mb-6"
           >
-            <div className="flex items-center gap-2 text-lg md:text-xl text-white dark:text-slate-300">
+            <div className="flex items-center gap-2 text-lg md:text-xl text-slate-700 dark:text-slate-200 font-medium">
               <MapPin className="h-5 w-5 text-green-600 dark:text-green-400" />
               Urban Planning
             </div>
             <div className="hidden md:block w-1 h-1 bg-slate-400 rounded-full"></div>
-            <div className="flex items-center gap-2 text-lg md:text-xl text-white dark:text-slate-300">
+            <div className="flex items-center gap-2 text-lg md:text-xl text-slate-700 dark:text-slate-200 font-medium">
               <Briefcase className="h-5 w-5 text-green-600 dark:text-green-400" />
               Sustainable Cities
             </div>
@@ -81,7 +81,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed font-medium"
           >
             Graduate Urban and Regional Planner passionate about creating
             sustainable, inclusive communities through innovative planning
@@ -97,7 +97,7 @@ const HeroSection = () => {
             <Button
               onClick={scrollToAbout}
               size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-lg"
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
             >
               Explore My Work
             </Button>
@@ -109,7 +109,7 @@ const HeroSection = () => {
               }
               variant="outline"
               size="lg"
-              className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-3 text-lg"
+              className="border-2 border-green-600 text-green-700 dark:text-green-500 hover:bg-green-600 hover:text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
             >
               Get In Touch
             </Button>
@@ -120,15 +120,15 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="mt-12"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-            className="cursor-pointer"
+            className="cursor-pointer p-2 rounded-full bg-white/20 dark:bg-slate-800/20 backdrop-blur-sm mx-auto w-fit"
             onClick={scrollToAbout}
           >
-            <ArrowDown className="h-8 w-8 text-green-600 dark:text-green-400" />
+            <ArrowDown className="h-8 w-8 text-green-600 dark:text-green-400 drop-shadow-sm" />
           </motion.div>
         </motion.div>
       </div>
