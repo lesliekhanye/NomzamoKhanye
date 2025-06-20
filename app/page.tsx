@@ -1,13 +1,14 @@
-import type { Metadata } from "next"
-import HeroSection from "@/components/hero-section"
-import AboutSection from "@/components/about-section"
-import ProjectsSection from "@/components/projects-section"
-import ContactSection from "@/components/contact-section"
-import Navigation from "@/components/navigation"
-import { ThemeProvider } from "@/components/theme-provider"
+import type { Metadata } from "next";
+import HeroSection from "@/components/hero-section";
+import AboutSection from "@/components/about-section";
+import ProjectsSection from "@/components/projects-section";
+import ContactSection from "@/components/contact-section";
+import Navigation from "@/components/navigation";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Natasha Nomzamo Khanye | Urban & Regional Planner | Sustainable Cities",
+  title:
+    "Natasha Nomzamo Khanye | Urban & Regional Planner | Sustainable Cities",
   description:
     "Graduate Urban and Regional Planner specializing in sustainable development, informal settlement upgrading, and green infrastructure. BSc 2023 Northwest University.",
   keywords: [
@@ -29,12 +30,12 @@ export const metadata: Metadata = {
     title: "Natasha Nomzamo Khanye | Urban & Regional Planner",
     description:
       "Graduate Urban and Regional Planner specializing in sustainable development and green infrastructure.",
-    url: "https://natasha-khanye-portfolio.vercel.app",
+    url: "https://nomzamokhanye.info",
     siteName: "Natasha Khanye Portfolio",
     type: "website",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Natasha Nomzamo Khanye - Urban Planner Portfolio",
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     title: "Natasha Nomzamo Khanye | Urban & Regional Planner",
     description:
       "Graduate Urban and Regional Planner specializing in sustainable development and green infrastructure.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -62,11 +63,19 @@ export const metadata: Metadata = {
   verification: {
     google: "your-google-verification-code",
   },
-}
+  icons: {
+    icon: "/nk.png",
+  },
+};
 
 export default function Home() {
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange={false}>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="light"
+      enableSystem
+      disableTransitionOnChange={false}
+    >
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-green-50 to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
         <Navigation />
         <main>
@@ -77,5 +86,5 @@ export default function Home() {
         </main>
       </div>
     </ThemeProvider>
-  )
+  );
 }
