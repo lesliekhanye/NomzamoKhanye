@@ -1,10 +1,6 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Inter, Geist } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nomzamokhanye.info"),
@@ -39,7 +35,7 @@ export const metadata: Metadata = {
       "Graduate Urban and Regional Planner specializing in sustainable development and green infrastructure.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Natasha Nomzamo Khanye - Urban Planner Portfolio",
@@ -64,7 +60,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  generator: "v0.dev",
+  icons: { icon: "/NK.png", apple: "/NK.png" },
 };
 
 export default function RootLayout({
@@ -74,20 +70,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="canonical" href="https://nomzamokhanye.info" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#16a34a" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta
-          name="google-site-verification"
-          content="your-google-verification-code"
-        />
-      </head>
-      <body
-        className={`${inter.variable} ${geist.variable} font-sans antialiased`}
-      >
+      <body className="font-sans antialiased">
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
         {children}
       </body>
     </html>

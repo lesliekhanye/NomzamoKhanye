@@ -1,25 +1,26 @@
-import type { Metadata } from "next"
-import { notFound } from "next/navigation"
-import ProjectDetail from "@/components/project-detail"
-import { projectsData } from "@/lib/projects-data"
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import ProjectDetail from "@/components/project-detail";
+import { projectsData } from "@/lib/projects-data";
 
 interface ProjectPageProps {
-  params: {
-    slug: string
-  }
+  params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
-  const project = projectsData.find((p) => p.slug === params.slug)
+export async function generateMetadata({
+  params,
+}: ProjectPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projectsData.find((p) => p.slug === slug);
 
   if (!project) {
     return {
       title: "Project Not Found",
-    }
+    };
   }
 
   return {
-    title: `${project.title} | Natasha Khanye`,
+    title: project.title,
     description: project.description,
     keywords: project.keywords,
     openGraph: {
@@ -27,21 +28,22 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       description: project.description,
       images: [project.image],
     },
-  }
+  };
 }
 
 export async function generateStaticParams() {
   return projectsData.map((project) => ({
     slug: project.slug,
-  }))
+  }));
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = projectsData.find((p) => p.slug === params.slug)
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  const project = projectsData.find((p) => p.slug === slug);
 
   if (!project) {
-    notFound()
+    notFound();
   }
 
-  return <ProjectDetail project={project} />
+  return <ProjectDetail project={project} />;
 }

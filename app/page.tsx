@@ -4,7 +4,6 @@ import AboutSection from "@/components/about-section";
 import ProjectsSection from "@/components/projects-section";
 import ContactSection from "@/components/contact-section";
 import Navigation from "@/components/navigation";
-import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   title:
@@ -60,31 +59,21 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
   icons: {
-    icon: "/nk.png",
+    icon: "/NK.png",
   },
 };
 
 export default function Home() {
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="light"
-      enableSystem
-      disableTransitionOnChange={false}
-    >
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-green-50 to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
-        <Navigation />
-        <main>
-          <HeroSection />
-          <AboutSection />
-          <ProjectsSection />
-          <ContactSection />
-        </main>
-      </div>
-    </ThemeProvider>
+    <>
+      <Navigation />
+      <main id="main-content">
+        <HeroSection />
+        <ProjectsSection />
+        <AboutSection />
+        <ContactSection />
+      </main>
+    </>
   );
 }

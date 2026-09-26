@@ -1,164 +1,63 @@
-"use client"
+import { ArrowUpRight } from "lucide-react";
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { GraduationCap, Target, Users, Lightbulb, Clock, BarChart3 } from "lucide-react"
-
-const AboutSection = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-
-  const skills = [
-    { name: "Critical Thinking", icon: Lightbulb },
-    { name: "Time Management", icon: Clock },
-    { name: "Regional Analysis", icon: BarChart3 },
-    { name: "Research & Analytics", icon: Target },
-    { name: "Public Participation", icon: Users },
-    { name: "Urban Design", icon: GraduationCap },
-  ]
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  }
-
+export default function AboutSection() {
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8" ref={ref}>
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="text-center mb-16"
+    <section id="about" className="about-section section-space page-width">
+      <div className="about-intro">
+        <p className="eyebrow section-kicker">02 / About me</p>
+        <h2>
+          Good places start
+          <br />
+          with people.
+        </h2>
+        <p className="about-lead">
+          I’m Natasha, an Urban and Regional Planning graduate with an interest
+          in how thoughtful design can make everyday life better.
+        </p>
+        <p className="body-copy">
+          My approach connects the needs of communities with the possibilities
+          of place. From informal settlement upgrading to green infrastructure,
+          I’m interested in practical, inclusive ways to shape South Africa’s
+          urban future.
+        </p>
+        <a
+          className="text-link"
+          href="https://www.linkedin.com/in/nomzamo-khanye/"
+          target="_blank"
+          rel="noreferrer"
         >
-          <motion.h2
-            variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-white mb-6"
-          >
-            About Me
-          </motion.h2>
-          <motion.div
-            variants={itemVariants}
-            className="w-24 h-1 bg-gradient-to-r from-green-600 to-blue-600 mx-auto mb-8"
-          />
-        </motion.div>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            className="space-y-6"
-          >
-            <Card className="p-8 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border-green-200 dark:border-green-800">
-              <CardContent className="p-0">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-green-100 dark:bg-green-900 rounded-full">
-                    <GraduationCap className="h-8 w-8 text-green-600 dark:text-green-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-slate-800 dark:text-white">Education</h3>
-                    <p className="text-green-600 dark:text-green-400 font-medium">BSc Urban and Regional Planning</p>
-                  </div>
-                </div>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                  Graduate from Northwest University (2023) with a Bachelor of Science in Urban and Regional Planning.
-                  My academic journey has equipped me with comprehensive knowledge in sustainable development, spatial
-                  planning, and community engagement strategies.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="p-8 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border-blue-200 dark:border-blue-800">
-              <CardContent className="p-0">
-                <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-4">Professional Focus</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                    <span className="text-slate-600 dark:text-slate-300">
-                      Sustainable Planning & Green Infrastructure
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                    <span className="text-slate-600 dark:text-slate-300">Informal Settlement Upgrading</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                    <span className="text-slate-600 dark:text-slate-300">Housing Development & Urban Design</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
-                    <span className="text-slate-600 dark:text-slate-300">Community Participation & Engagement</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            className="space-y-8"
-          >
-            <div>
-              <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-6">Core Skills</h3>
-              <div className="grid grid-cols-2 gap-4">
-                {skills.map((skill, index) => (
-                  <motion.div
-                    key={skill.name}
-                    variants={itemVariants}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    className="group"
-                  >
-                    <Card className="p-4 bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border-slate-200 dark:border-slate-700 hover:border-green-300 dark:hover:border-green-600 transition-all duration-300 cursor-pointer">
-                      <CardContent className="p-0 text-center">
-                        <div className="p-3 bg-gradient-to-br from-green-100 to-blue-100 dark:from-green-900 dark:to-blue-900 rounded-full w-fit mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
-                          <skill.icon className="h-6 w-6 text-green-600 dark:text-green-400" />
-                        </div>
-                        <p className="text-sm font-medium text-slate-700 dark:text-slate-300">{skill.name}</p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </div>
+          Connect on LinkedIn <ArrowUpRight size={15} />
+        </a>
+      </div>
+      <div className="about-details">
+        <div className="education-row">
+          <p className="small-label">Education</p>
+          <h3>BSc Urban & Regional Planning</h3>
+          <p>
+            Northwest University <span>Class of 2023</span>
+          </p>
+        </div>
+        <div className="focus-list">
+          <p className="small-label">Areas of focus</p>
+          {[
+            "Sustainable planning & green infrastructure",
+            "Informal settlement upgrading",
+            "Housing development & urban design",
+            "Community participation",
+          ].map((item, index) => (
+            <div className="focus-row" key={item}>
+              <span>0{index + 1}</span>
+              <h3>{item}</h3>
             </div>
-
-            <Card className="p-6 bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 border-green-200 dark:border-green-800">
-              <CardContent className="p-0">
-                <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-4">Mission Statement</h3>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed italic">
-                  "I am committed to creating sustainable, inclusive urban environments that enhance quality of life
-                  while preserving our natural resources. Through innovative planning solutions and community-centered
-                  approaches, I strive to build cities that work for everyone."
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
+          ))}
+        </div>
+        <div className="skills-line">
+          <p className="small-label">In practice</p>
+          <p>
+            Spatial analysis · Research · Public participation · Urban design
+          </p>
         </div>
       </div>
     </section>
-  )
+  );
 }
-
-export default AboutSection
