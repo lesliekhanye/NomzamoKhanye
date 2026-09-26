@@ -148,7 +148,7 @@ export default function ProjectDetail({ project }: { project: ProjectData }) {
               </section>
             ))}
             <a
-              href={`mailto:contact@nomzamokhanye.info?subject=${encodeURIComponent(`Report request: ${project.title}`)}`}
+              href={`mailto:nomzamokhanye72@gmail.com?subject=${encodeURIComponent(`Report request: ${project.title}`)}`}
               className="button-primary"
             >
               Request the full report <ArrowUpRight size={16} />

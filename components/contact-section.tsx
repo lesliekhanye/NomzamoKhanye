@@ -21,15 +21,15 @@ export default function ContactSection() {
           <div className="contact-links">
             <a
               className="contact-email"
-              href="mailto:contact@nomzamokhanye.info"
+              href="mailto:nomzamokhanye72@gmail.com"
             >
               Start a conversation <ArrowUpRight size={27} />
             </a>
             <a
               className="contact-address"
-              href="mailto:contact@nomzamokhanye.info"
+              href="mailto:nomzamokhanye72@gmail.com"
             >
-              contact@nomzamokhanye.info
+              nomzamokhanye72@gmail.com
             </a>
             <div className="contact-secondary">
               <a href="tel:+27638908334">+27 63 890 8334</a>
