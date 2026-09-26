@@ -131,7 +131,7 @@ button {
 }
 .hero-main {
   display: grid;
-  grid-template-columns: 47% 53%;
+  grid-template-columns: 52% 48%;
   align-items: center;
   min-height: 690px;
   padding-block: 65px 55px;
@@ -140,7 +140,7 @@ button {
   padding-bottom: 6px;
   position: relative;
   z-index: 1;
-  max-width: 620px;
+  max-width: 680px;
 }
 .hero-town {
   position: relative;
@@ -187,9 +187,9 @@ button {
   border-radius: 50%;
 }
 .hero h1 {
-  font-size: clamp(44px, 6.4vw, 88px);
+  font-size: clamp(52px, 5vw, 72px);
   line-height: 1.08;
-  letter-spacing: -3.2px;
+  letter-spacing: -2.4px;
   font-weight: 550;
   margin: 30px 0 28px;
 }
@@ -740,9 +740,12 @@ h2 {
   .page-width {
     width: calc(100% - 72px);
   }
+  .hero-main {
+    grid-template-columns: 52% 48%;
+  }
   .hero h1 {
-    font-size: clamp(48px, 7vw, 74px);
-    letter-spacing: -3px;
+    font-size: clamp(42px, 5.3vw, 58px);
+    letter-spacing: -2px;
   }
   .hero-town {
     height: 460px;
