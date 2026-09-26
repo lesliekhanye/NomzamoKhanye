@@ -130,6 +130,8 @@ button {
   display: none !important;
 }
 .hero-main {
+  display: grid;
+  grid-template-columns: 47% 53%;
   align-items: center;
   min-height: 690px;
   padding-block: 65px 55px;
@@ -138,7 +140,7 @@ button {
   padding-bottom: 6px;
   position: relative;
   z-index: 1;
-  max-width: 1040px;
+  max-width: 620px;
 }
 .eyebrow {
   font-size: 10px;
@@ -233,6 +235,50 @@ button {
   height: 10px;
   background: #cbcec4;
   margin-inline: 4px;
+}
+.hero-map {
+  width: 100%;
+  margin: 0;
+  padding-left: 42px;
+}
+.hero-map-frame {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1.36;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: #ebede6;
+}
+.hero-map-image {
+  object-fit: cover;
+  filter: saturate(0.68) contrast(0.96);
+}
+.map-location {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border: 1px solid rgba(222, 223, 216, 0.8);
+  border-radius: 4px;
+  background: rgba(247, 247, 244, 0.92);
+  color: #4f5b4b;
+  font-size: 10px;
+  backdrop-filter: blur(10px);
+}
+.hero-map-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 2px 0;
+  color: #81877d;
+  font-size: 9px;
+}
+.hero-map-caption span:first-child {
+  color: #53634f;
 }
 .icon-button {
   width: 34px;
@@ -713,6 +759,9 @@ h2 {
     font-size: clamp(48px, 7vw, 74px);
     letter-spacing: -3px;
   }
+  .hero-map {
+    padding-left: 25px;
+  }
   .hero-location {
     flex-wrap: wrap;
     max-width: 290px;
@@ -779,6 +828,7 @@ h2 {
     gap: 12px;
   }
   .hero-main {
+    grid-template-columns: 1fr;
     min-height: 560px;
     padding-block: 51px 48px;
   }
@@ -804,6 +854,13 @@ h2 {
   }
   .hero-copy {
     padding-bottom: 0;
+  }
+  .hero-map {
+    margin-top: 40px;
+    padding-left: 0;
+  }
+  .hero-map-frame {
+    aspect-ratio: 1.28;
   }
   .hero-bottom {
     min-height: 66px;

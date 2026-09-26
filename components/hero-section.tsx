@@ -1,6 +1,5 @@
-"use client";
-
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowDown, ArrowUpRight, MapPin } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -35,6 +34,23 @@ export default function HeroSection() {
             <span className="location-divider" /> BSc Urban & Regional Planning
           </div>
         </div>
+        <figure className="hero-map">
+          <div className="hero-map-frame">
+            <Image
+              src="/project3.png"
+              alt="Spatial analysis map of Johannesburg and its surrounding urban districts"
+              fill
+              priority
+              sizes="(max-width: 760px) 100vw, 54vw"
+              className="hero-map-image"
+            />
+            <span className="map-location"><MapPin size={13} /> Johannesburg, South Africa</span>
+          </div>
+          <figcaption className="hero-map-caption">
+            <span>Urban analysis</span>
+            <span>Mapping places, patterns & possibilities</span>
+          </figcaption>
+        </figure>
       </div>
       <div className="hero-bottom">
         <span>People. Place. Possibility.</span>
